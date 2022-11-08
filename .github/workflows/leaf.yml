@@ -1,0 +1,35 @@
+name: Leaf
+
+on:
+
+  workflow_call:
+
+    inputs:
+
+      # The consumer name.
+      consumer:
+        required: true
+        type: string
+
+      # The OS List (example: [ubuntu-22.04, ubuntu-20.04])
+      osList:
+        required: true
+        type: array
+
+jobs:
+
+  called:
+
+    name: ${{ inputs.consumer }} on ${{ matrix.os }}
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: ${{ inputs.osList }}
+
+    steps:
+
+      - name: Print consumer & OS
+        run: echo "${{ inputs.consumer }} on ${{ matrix.os }}"
+        shell: bash
