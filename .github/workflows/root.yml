@@ -13,13 +13,13 @@ jobs:
     strategy:
       matrix: ${{ fromJson('{"include":[{"name":"batch0","consumers":"[\"c1\",\"c2\"]"},{"name":"batch1","consumers":"[\"c3\",\"c4\"]"}]}') }}
 
-    # uses: ./.github/workflows/intermediate.yml
+    uses: ./.github/workflows/intermediate.yml
 
-    # with:
-    #   consumers: ${{ matrix.consumers }}
+    with:
+      consumers: ${{ toJSON(matrix.consumers) }}
 
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
 
-    steps:
+    # steps:
 
-      - run: echo ${{ toJSON(matrix.consumers) }}
+    #   - run: echo ${{ toJSON(matrix.consumers) }}
