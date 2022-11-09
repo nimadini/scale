@@ -21,14 +21,14 @@ jobs:
       matrix:
         consumer: ${{ fromJSON(inputs.consumers) }}
         
-    uses: ./.github/workflows/leaf.yml
+    # uses: ./.github/workflows/leaf.yml
 
     # with:
     #   consumer: ${{ toJSON(matrix.consumer) }}
     #   osList: '["ubuntu-22.04","ubuntu-20.04"]'
 
-    # runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-    # steps:
+    steps:
 
-    #   - run: echo ${{ matrix.consumer }}
+      - run: echo ${{ matrix.consumer }}
