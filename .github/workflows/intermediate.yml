@@ -23,9 +23,9 @@ jobs:
         
     uses: ./.github/workflows/leaf.yml
 
-    with:
-      consumer: ${{ toJSON(matrix.consumer) }}
-      osList: '["ubuntu-22.04","ubuntu-20.04"]'
+    # with:
+    #   consumer: ${{ toJSON(matrix.consumer) }}
+    #   osList: '["ubuntu-22.04","ubuntu-20.04"]'
 
     # runs-on: ubuntu-latest
 
