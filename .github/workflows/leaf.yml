@@ -16,21 +16,6 @@ on:
         required: true
         type: string
 
-  # workflow_dispatch:
-
-  #   inputs:
-
-  #     # The consumer name.
-  #     consumer:
-  #       required: true
-  #       type: string
-
-  #     # The OS List (example: [ubuntu-22.04, ubuntu-20.04])
-  #     osList:
-  #       required: true
-  #       type: string
-
-
 jobs:
 
   called:
@@ -46,5 +31,5 @@ jobs:
     steps:
 
       - name: Print consumer & OS
-        run: echo "foo"
+        run: echo "${{ inputs.consumer }} on ${{ matrix.os }}"
         shell: bash
