@@ -18,6 +18,8 @@ jobs:
     # with:
     #   consumers: ${{ matrix.consumers }}
 
+    runs-on: ubuntu-latest
+
     steps:
 
       - run: echo ${{ matrix.consumers }}
