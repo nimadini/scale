@@ -11,14 +11,14 @@ on:
         required: true
         type: string
 
+env:
+  consumers: ${{ inputs.consumers }}
+      
 jobs:
 
   caller:
 
     name: ${{ matrix.consumer }}
-
-    env:
-      consumers: ${{ inputs.consumers }}
 
     strategy:
       matrix:
