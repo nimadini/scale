@@ -19,8 +19,8 @@ jobs:
 
     strategy:
       matrix:
-        consumer: ${{ fromJSON('["c1","c2"]') }}
-        # consumer: ${{ fromJSON(inputs.consumers) }}
+        # consumer: ${{ fromJSON('["c1","c2"]') }}
+        consumer: ${{ fromJSON(inputs.consumers) }}
         
     uses: ./.github/workflows/leaf.yml
 
