@@ -16,7 +16,7 @@ jobs:
     uses: ./.github/workflows/intermediate.yml
 
     with:
-      consumers: ${{ toJSON(matrix.consumers) }}
+      consumers: ${{ matrix.consumers }}
 
     # runs-on: ubuntu-latest
 
