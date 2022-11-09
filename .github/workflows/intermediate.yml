@@ -17,27 +17,27 @@ jobs:
 
     # name: ${{ matrix.consumer }}
 
-    strategy:
-      matrix:
-        consumer: ${{ fromJSON(inputs.consumers) }}
-
-    uses: ./.github/workflows/leaf.yml
-
-    with:
-      consumer: '${{ matrix.consumer }}'
-      osList: '["ubuntu-22.04","ubuntu-20.04"]'
-
-    # name: ${{ matrix.consumer }}
-
     # strategy:
     #   matrix:
     #     consumer: ${{ fromJSON(inputs.consumers) }}
-        
+
     # uses: ./.github/workflows/leaf.yml
 
     # with:
-    #   consumer: ${{ matrix.consumer }}
+    #   consumer: '${{ matrix.consumer }}'
     #   osList: '["ubuntu-22.04","ubuntu-20.04"]'
+
+    name: ${{ matrix.consumer }}
+
+    strategy:
+      matrix:
+        consumer: ${{ fromJSON(inputs.consumers) }}
+        
+    uses: ./.github/workflows/leaf.yml
+
+    with:
+      consumer: ${{ matrix.consumer }}
+      osList: '["ubuntu-22.04","ubuntu-20.04"]'
 
     # runs-on: ubuntu-latest
 
