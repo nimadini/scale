@@ -32,4 +32,4 @@ jobs:
 
     steps:
 
-      - run: echo ${{ toJSON(inputs.consumers) }}
+      - run: echo '${{ inputs.consumers }}'
