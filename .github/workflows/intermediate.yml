@@ -9,7 +9,7 @@ on:
       # The consumer list (example: [c0, c1, c2]).
       consumers:
         required: true
-        type: array
+        type: string
 
 jobs:
 
@@ -19,10 +19,10 @@ jobs:
 
     strategy:
       matrix:
-        consumer: ${{ inputs.consumers }}
+        consumer: ${{ fromJson(inputs.consumers) }}
 
     uses: ./.github/workflows/leaf.yml
 
     with:
       consumer: ${{ matrix.consumer }}
-      osList: [ubuntu-22.04, ubuntu-20.04]
+      osList: '["ubuntu-22.04", "ubuntu-20.04"]'

@@ -14,7 +14,7 @@ on:
       # The OS List (example: [ubuntu-22.04, ubuntu-20.04])
       osList:
         required: true
-        type: array
+        type: string
 
 jobs:
 
@@ -26,7 +26,7 @@ jobs:
 
     strategy:
       matrix:
-        os: ${{ inputs.osList }}
+        os: ${{ fromJson(inputs.osList) }}
 
     steps:
 
