@@ -15,11 +15,11 @@ jobs:
 
   caller:
 
-    name: ${{ matrix.consumer }}
+    # name: ${{ matrix.consumer }}
 
-    strategy:
-      matrix:
-        consumer: ${{ fromJSON(inputs.consumers) }}
+    # strategy:
+    #   matrix:
+    #     consumer: ${{ fromJSON(inputs.consumers) }}
         
     # uses: ./.github/workflows/leaf.yml
 
@@ -31,4 +31,4 @@ jobs:
 
     steps:
 
-      - run: echo ${{ matrix.consumer }}
+      - run: echo ${{ fromJSON(inputs.consumers) }}
