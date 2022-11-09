@@ -15,7 +15,7 @@ jobs:
 
   caller:
 
-    name: 
+    name: ${{ matrix.consumer }}
 
     strategy:
       matrix:
