@@ -13,7 +13,7 @@ on:
 
 env:
   consumers: ${{ inputs.consumers }}
-      
+
 jobs:
 
   caller:
@@ -22,7 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        consumer: ${{ fromJSON(env.consumers) }}
+        consumer: ${{ fromJSON(${{ env.consumers }}) }}
         
     # uses: ./.github/workflows/leaf.yml
 
