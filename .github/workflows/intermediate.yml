@@ -32,4 +32,4 @@ jobs:
 
     steps:
 
-      - run: echo ${{ inputs.consumers }}
+      - run: echo '${{ inputs.consumers }}'
