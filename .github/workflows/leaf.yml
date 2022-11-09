@@ -16,6 +16,21 @@ on:
         required: true
         type: string
 
+    workflow_dispatch:
+
+      inputs:
+
+        # The consumer name.
+        consumer:
+          required: true
+          type: string
+
+        # The OS List (example: [ubuntu-22.04, ubuntu-20.04])
+        osList:
+          required: true
+          type: string
+
+
 jobs:
 
   called:
