@@ -4,17 +4,17 @@ on:
 
   workflow_call:
 
-    # inputs:
+    inputs:
 
-    #   # The consumer name.
-    #   consumer:
-    #     required: true
-    #     type: string
+      # The consumer name.
+      consumer:
+        required: true
+        type: string
 
-    #   # The OS List (example: [ubuntu-22.04, ubuntu-20.04])
-    #   osList:
-    #     required: true
-    #     type: string
+      # The OS List (example: [ubuntu-22.04, ubuntu-20.04])
+      osList:
+        required: true
+        type: string
 
   # workflow_dispatch:
 
@@ -35,13 +35,13 @@ jobs:
 
   called:
 
-    # name: ${{ inputs.consumer }} on ${{ matrix.os }}
+    name: ${{ inputs.consumer }} on ${{ matrix.os }}
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
-    # strategy:
-    #   matrix:
-    #     os: ${{ fromJSON(inputs.osList) }}
+    strategy:
+      matrix:
+        os: ${{ fromJSON(inputs.osList) }}
 
     steps:
 
