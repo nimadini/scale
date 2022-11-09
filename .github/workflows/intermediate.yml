@@ -11,9 +11,6 @@ on:
         required: true
         type: string
 
-env:
-  consumers: ${{ inputs.consumers }}
-
 jobs:
 
   caller:
@@ -22,7 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        consumer: ${{ fromJSON(${{ env.consumers }}) }}
+        consumer: ${{ fromJSON(inputs.consumers) }}
         
     # uses: ./.github/workflows/leaf.yml
 
