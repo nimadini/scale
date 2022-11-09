@@ -4,8 +4,6 @@ on:
 
   workflow_dispatch:
 
-  push:
-
 jobs:
 
   caller:
@@ -19,14 +17,10 @@ jobs:
         include:
 
           - name: batch0
-            consumers:
-              - c0
-              - c1
+            consumers: '["c0","c1"]'
 
           - name: batch1
-            consumers:
-              - c2
-              - c3
+            consumers: '["c2","c3"]'
 
 
     uses: ./.github/workflows/intermediate.yml
