@@ -11,16 +11,16 @@ jobs:
     name: ${{ matrix.name }}
 
     strategy:
-      # matrix: '{"include":[{"name":"batch0","consumers":"[\"c1\",\"c2\"]"},{"name":"batch1","consumers":"[\"c3\",\"c4\"]"}]}'
+      matrix: {"include":[{"name":"batch0","consumers":["c1","c2"]},{"name":"batch1","consumers":["c3","c4"]}]}
       
-      matrix:
-        include:
+      # matrix:
+      #   include:
 
-          - name: batch0
-            consumers: ["c0","c1"]
+      #     - name: batch0
+      #       consumers: ["c0","c1"]
 
-          - name: batch1
-            consumers: ["c2","c3"]
+      #     - name: batch1
+      #       consumers: ["c2","c3"]
 
 
     uses: ./.github/workflows/intermediate.yml
